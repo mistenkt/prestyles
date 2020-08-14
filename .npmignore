@@ -1,0 +1,22 @@
+# OSX
+#
+.DS_Store
+
+# MISC
+#
+.idea/
+.prettierrc
+
+# Tests
+#
+__tests__
+__mocks__
+jest.config.js
+babel.config.js
+
+
+# node.js
+#
+node_modules/
+yarn-error.log
+npm-debug.log

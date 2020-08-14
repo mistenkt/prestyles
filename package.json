@@ -1,10 +1,10 @@
 {
-  "name": "prestyle",
+  "name": "prestyles",
   "version": "1.0.0",
   "description": "React Native StyleSheet alternative that supports platform switching and functional styles",
   "main": "./src/index.js",
   "author": "mistenkt",
-  "homepage": "https://github.com/mistenkt/kb-rnstyles",
+  "homepage": "https://github.com/mistenkt/prestyle",
   "private": false,
   "license": "MIT",
   "scripts": {

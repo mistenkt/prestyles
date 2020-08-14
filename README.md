@@ -1,15 +1,15 @@
-# Prestyle
+# Prestyles
 A simple little package that makes writing cross-platform responsive RN styles a bit tidier.
 
 
 ## Installation
-`yarn add prestyle`
+`yarn add prestyles`
 
 ## Usage (createStyles)
 
 1. Import the library
 
-    `import createStyles from 'prestyle';`
+    `import createStyles from 'prestyles';`
 
 2. Use this function where you would normally use `StyleSheet.create()`;
 
@@ -59,7 +59,7 @@ A simple little package that makes writing cross-platform responsive RN styles a
 1. Configure your breakpoints at top level `App.js` or wherever.
     
    ```jsx harmony
-   import {setBreakpoints} from 'prestyle';
+   import {setBreakpoints} from 'prestyles';
    
    setBreakpoints({
        desktop: 1024, // min width,
@@ -73,7 +73,7 @@ A simple little package that makes writing cross-platform responsive RN styles a
    import {
        createResponsiveStyles, 
        useResponsiveStyles
-   } from 'prestyle';
+   } from 'prestyles';
     ```
    
 3. Create styles with breakpoint sub styles
