@@ -7,6 +7,7 @@
   "homepage": "https://github.com/mistenkt/prestyles",
   "private": false,
   "license": "MIT",
+  "keywords": ["react-native", "react-native-web", "media-queries", "responsive-styles", "breakpoints", "platform styles", "platform responsive styles"],
   "scripts": {
     "pretty": "prettier --write \"src/**/*.js\" \"__tests__/**/*.js\" \"__mocks__/**/*.js\"",
     "test": "jest"
