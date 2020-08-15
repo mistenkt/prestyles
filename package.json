@@ -1,6 +1,6 @@
 {
   "name": "prestyles",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "React Native StyleSheet alternative that supports platform switching and functional styles",
   "main": "./src/index.js",
   "author": "mistenkt",
