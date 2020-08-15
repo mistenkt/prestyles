@@ -107,11 +107,14 @@ A simple little package that makes writing cross-platform responsive RN styles a
    }
     ```
   
-5. The `useResponsiveStyles` hook accepts two params.
+5. The `useResponsiveStyles` hook accepts three params.
     1. The required `styles` object generated from `createResponsiveStyles`
-    2. An optional custom breakpoint object that will overwrite whatever was set at top-level with `setBreakpoints`
+    2. A boolean to enable/disable the styles to spill over (upwards). Read section about this.
+    3. An optional custom breakpoint object that will overwrite whatever was set at top-level with `setBreakpoints`
   
 6. The `useResponsiveStyles` hook returns an array with 3 values:
     1. The parsed styles
     2. A boolean letting you know if the styles are ready (in cased you experience any flicker between the default styles, and the matched styles on load).
     3. An updated screen with value if you need it for anything
+    
+7. All breakpoints will be compared with `>=` (larger than or equal), this means styles will overflow upwards. IE tablet will inherit mobile styles, and desktop will inherit tablet styles. You can prevent this by either passing false as the second to the `useResponsiveStyles` hook, or by declaring your styles as exact match only by prefixing them with an underscore. `_mobile` will only render on mobile, `_tablet` only on desktop. You can also prefix your custom breakpoints the same way.
