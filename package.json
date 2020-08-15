@@ -4,7 +4,7 @@
   "description": "React Native StyleSheet alternative that supports platform switching and functional styles",
   "main": "./src/index.js",
   "author": "mistenkt",
-  "homepage": "https://github.com/mistenkt/prestyle",
+  "homepage": "https://github.com/mistenkt/prestyles",
   "private": false,
   "license": "MIT",
   "scripts": {
