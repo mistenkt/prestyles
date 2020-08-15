@@ -56,7 +56,7 @@ A simple little package that makes writing cross-platform responsive RN styles a
    
 ## Usage (responsiveStyles)
 
-1. Configure your breakpoints at top level `App.js` or wherever.
+1. Configure your breakpoints at top level `App.js` or wherever. (If you skip this step these are the default breakpoints)
     
    ```jsx harmony
    import {setBreakpoints} from 'prestyles';
@@ -70,8 +70,7 @@ A simple little package that makes writing cross-platform responsive RN styles a
 2. Import the style creator and hook
 
     ```jsx harmony
-   import {
-       createResponsiveStyles, 
+   import createStyles, {
        useResponsiveStyles
    } from 'prestyles';
     ```
@@ -79,7 +78,7 @@ A simple little package that makes writing cross-platform responsive RN styles a
 3. Create styles with breakpoint sub styles
 
     ```jsx harmony
-    const styles = createResponsiveStyles({
+    const styles = createStyles({
        container: {
            backgroundColor: 'white', // Will be shown if no matching breakpoint
            desktop: {
@@ -108,7 +107,7 @@ A simple little package that makes writing cross-platform responsive RN styles a
     ```
   
 5. The `useResponsiveStyles` hook accepts three params.
-    1. The required `styles` object generated from `createResponsiveStyles`
+    1. The required `styles` object generated from `createStyles`
     2. A boolean to enable/disable the styles to spill over (upwards). Read section about this.
     3. An optional custom breakpoint object that will overwrite whatever was set at top-level with `setBreakpoints`
   
