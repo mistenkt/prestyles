@@ -1,13 +1,21 @@
 {
   "name": "prestyles",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "React Native StyleSheet alternative that supports platform switching and functional styles",
   "main": "./src/index.js",
   "author": "mistenkt",
   "homepage": "https://github.com/mistenkt/prestyles",
   "private": false,
   "license": "MIT",
-  "keywords": ["react-native", "react-native-web", "media-queries", "responsive-styles", "breakpoints", "platform styles", "platform responsive styles"],
+  "keywords": [
+    "react-native",
+    "react-native-web",
+    "media-queries",
+    "responsive-styles",
+    "breakpoints",
+    "platform styles",
+    "platform responsive styles"
+  ],
   "scripts": {
     "pretty": "prettier --write \"src/**/*.js\" \"__tests__/**/*.js\" \"__mocks__/**/*.js\"",
     "test": "jest"
