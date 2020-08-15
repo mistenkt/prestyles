@@ -8,7 +8,7 @@ const useResponsiveStyles = (
     exactOnly = false,
     customBreakpoints = null
 ) => {
-    const [activeStyles, setActiveStyles] = useState(styles);
+    const [activeStyles, setActiveStyles] = useState({});
     const [ready, setReady] = useState(false);
     const width = useResizeListener();
 
