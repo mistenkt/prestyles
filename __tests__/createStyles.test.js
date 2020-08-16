@@ -1,6 +1,22 @@
 import createStyles from '../src/createStyles';
 import { Platform } from '../__mocks__/react-native';
 
+const testStyles = {
+    test: {
+        color: 'red',
+        fontSize: 12,
+        web: {
+            color: 'black',
+        },
+        ios: {
+            color: 'yellow',
+        },
+        android: {
+            color: 'blue',
+        },
+    },
+};
+
 describe('createStyles objects', () => {
     test('It works with regular styles', () => {
         const styleObject = {
@@ -19,41 +35,32 @@ describe('createStyles objects', () => {
         expect(createdStyles).toMatchObject(styleObject);
     });
 
-    test('It uses webstyles when platform is web', () => {
+    test('It picks correct styles based on platform', () => {
         Platform.OS = 'web';
 
-        const parsedStyles = createStyles({
-            foo: {
-                color: 'red',
+        expect(createStyles(testStyles)).toMatchObject({
+            test: {
                 fontSize: 12,
-                web: {
-                    color: 'blue',
-                },
+                color: 'black',
             },
         });
 
-        expect(parsedStyles.foo).toMatchObject({
-            color: 'blue',
-            fontSize: 12,
-        });
-    });
+        Platform.OS = 'ios';
 
-    test('It removes web styles when platform is not web', () => {
-        Platform.OS = 'native';
-
-        const parsedStyles = createStyles({
-            foo: {
-                color: 'red',
+        expect(createStyles(testStyles)).toMatchObject({
+            test: {
                 fontSize: 12,
-                web: {
-                    color: 'blue',
-                },
+                color: 'yellow',
             },
         });
 
-        expect(parsedStyles.foo).toMatchObject({
-            color: 'red',
-            fontSize: 12,
+        Platform.OS = 'android';
+
+        expect(createStyles(testStyles)).toMatchObject({
+            test: {
+                fontSize: 12,
+                color: 'blue',
+            },
         });
     });
 });

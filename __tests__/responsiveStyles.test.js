@@ -1,8 +1,9 @@
 import React from 'react';
-import createStyles from '../src';
+import createStyles, { setBreakpoints } from '../src';
 import { Dimensions } from '../__mocks__/react-native';
 import { renderHook, act } from '@testing-library/react-hooks';
 import useResponsiveStyles from '../src/responsiveStyles/useResponsiveStyles';
+import { getBreakpoints } from '../src/responsiveStyles/breakPoints';
 
 describe('Responsive styles', () => {
     test('hook works', async () => {
@@ -22,6 +23,12 @@ describe('Responsive styles', () => {
                         height: 50,
                     },
                 },
+                functional: ({ size }) => ({
+                    size: size,
+                    desktop: {
+                        size: 15,
+                    },
+                }),
             },
             true
         );
@@ -35,6 +42,10 @@ describe('Responsive styles', () => {
             width: 10,
         });
 
+        expect(result.current[0].functional({ size: 12 })).toMatchObject({
+            size: 15,
+        });
+
         Dimensions.setWidth(1000);
         Dimensions.fireEvent();
 
@@ -44,6 +55,10 @@ describe('Responsive styles', () => {
             color: 'yellow',
             width: 10,
             height: 50,
+        });
+
+        expect(result.current[0].functional({ size: 12 })).toMatchObject({
+            size: 12,
         });
     });
 
@@ -139,5 +154,16 @@ describe('Responsive styles', () => {
         expect(result.current[0].test).toMatchObject({
             color: 'yellow',
         });
+    });
+
+    test('Global custom breakpoints work', () => {
+        let bps = {
+            desktop: 768,
+            mobile: 0,
+        };
+
+        setBreakpoints(bps);
+
+        expect(getBreakpoints()).toMatchObject(bps);
     });
 });
